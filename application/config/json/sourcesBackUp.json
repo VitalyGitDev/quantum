@@ -1,0 +1,69 @@
+{
+    "pannos-creative":  {
+        "title": "Pannos Creative",
+        "path": "~/Development/PannosCreative/",
+        "container": [
+            {
+                "name": "My ProScout",
+                "folder": "myproscout",
+                "url": "http://myproscout.local/"
+            },
+            {
+                "name": "Signdiggers",
+                "folder": "signdiggers",
+                "url": "http://signdiggers.local/"
+            }
+        ]
+    },
+    "test-tasks":  {
+        "title": "Test-tasks",
+        "container": [
+            {
+                "name": "BonusCodes",
+                "url": "http://bonus-codes-front.local/"
+            },
+            {
+                "name": "RegionSelect",
+                "url": "http://regions-select.local/"
+            },
+            {
+                "name": "CSV Parser",
+                "url": "http://css-parser.local/"
+            },
+            {
+                "name": "RealTime Editor",
+                "url": "http://realtime-editor.local/"
+            },
+            {
+                "name": "XML Parser",
+                "url": "http://xml-parser-front.local/"
+            },
+            {
+                "name": "Statistic System",
+                "url": "http://statistic-system.local/"
+            }
+        ]
+    },
+    "education":  {
+        "title": "Education",
+        "container": [
+            {
+                "name": "Symfony 2.8",
+                "url": "http://symfony.local/"
+            }
+        ]
+    },
+    "admin-resources": {
+        "title": "Admin resources",
+        "container": [
+            {
+                "name": "Adminner",
+                "url": "http://adminer.local/"
+            },
+            {
+                "name": "DHC Test",
+                "url": "chrome-extension://aejoelaoggembcahagimdiliamlcdmfm/dhc.html"
+            }
+        ]
+    }
+}

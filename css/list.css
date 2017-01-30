@@ -1,0 +1,93 @@
+body {
+    background: url('/../images/DeepSpace.jpg') no-repeat 100% 100%;
+    overflow: hidden;
+}
+.list-item {
+    /*border: 1px solid #fcfcfc;*/
+    border-radius: 5px;
+    height: 230px;
+    box-shadow: 0px 0px 5px 3px rgba(1,50,125, 0.3);
+    background: rgba(255, 233, 233, 1);
+}
+.list-item .iframe-wrapper {
+    overflow: hidden;
+    width: 158px;
+    height: 130px;
+    padding-top: 3px;
+}
+.list-item .iframe-wrapper iframe {
+    -webkit-transform: scale(0.3);
+    -webkit-transform-origin: 0 0;
+    width: 550px;
+    height: 400px;
+    margin-top:2px;
+    position: relative;
+    left: -2px;
+    z-index: 1000;
+    position: relative;
+    background: #cfcfcf;
+}
+.list-item .iframe-overlay {
+    width: 210px;
+    height: 130px;
+    z-index: 1100;
+    position: relative;
+    top: -405px;
+    /*background: #cfcfcf;*/
+}
+.list-item-menu {
+    border-top: 1px solid #000;
+}
+.list-menu-entry:first-child {
+    border-left: none;
+}
+.list-menu-entry:last-child {
+    border-right: none;
+}
+.list-menu-entry {
+    border-right: 1px solid #000;
+    display: inline-block;
+    float: left;
+    width: 30px;
+}
+.list-menu-entry i {
+    cursor: pointer;
+}
+.button, button {
+    padding: 0 10px;
+}
+.row {
+    text-align: center;
+}
+.row h5 {
+    margin-bottom: 0px;
+    font-size: 14px;
+}
+.margin-top-30 {
+    margin-top: 30px;
+}
+.plus-block {
+    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+.plus-block div {
+    height: 100%;
+    margin-top: 50px;
+    font-size: 110px;
+    font-weight: 100;
+    color: rgba(233, 233, 233, 0.3);
+    background: none;
+}
+.side-button {
+    position: absolute;
+    float: right;
+    width: 170px;
+    color: rgba(0, 153, 255, 1.0);
+    background: rgba(0, 0, 0, 0.3);
+}
+.side-button:active {
+    color: rgba(0, 0, 255, 1.0);
+}
+.side-button:focus {
+    color: rgba(0, 0, 255, 1.0);
+}

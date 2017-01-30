@@ -1,0 +1,13 @@
+- Make Routes configurable!!!!!!!!!
+- Make Security Control SERVICE !!!!!
+- Think about how to set Permission for resources.json file edit.
+
+- Review Model fields mapping mechanism(maybe we need to use vendors)
+- Make authentication check for REST Controllers(use OAuth2.0).
+- Different Services for Model Data storage(SQL-DB, NoSQL-DB, File<.json, .yml, .ini>)
+
+- Make JS OOP for Cube!!!
+- Create the way to edit hosts and nginx config files!!!
+
+- Refactoring CSS styles and Class-names!!!
+- Make Translation Service.

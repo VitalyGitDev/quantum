@@ -1,3 +1,16 @@
+//======= CURRENT WORKAROUND=======\\
+- Make resource delete logic;
+- Make redraw logic after successfully action
+
+
+
+
+
+
+
+
+
+//======= NEED TO DO ========\\
 - Make Routes configurable!!!!!!!!!
 - Make Security Control SERVICE !!!!!
 - Think about how to set Permission for resources.json file edit.

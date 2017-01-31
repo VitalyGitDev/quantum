@@ -8,6 +8,7 @@ $(document).ready(function(){
     WINDOW_FACTORY.createModal($('body'), RESOURCE_MODEL);
 });
 
+//TODO: REDRAW CUBE-CATEGORY SIDE AFTER SUCCESSFULL SAVING!!!!!!!!
 $(document).on('click', '.plus-block', function(){
     $('.window_background').show();
     WINDOW_FACTORY.get('resourceCreation', $(this).parents('.container').attr('category'));

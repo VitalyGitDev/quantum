@@ -19,12 +19,24 @@ class ResourceController extends RESTController
         //TODO: STATUS CODES REPLY NEEDED FOR SUCCESS AND FALSE
         if (!empty($this->model)) {
             $this->model->load($_POST);
-//die("<pre>" . print_r($this->model, 1) . "</pre>");
-            echo (json_encode(['status' => $this->model->save()]));
+            if ($this->model->save()) {
+                echo (json_encode([
+                  'status' => 'success',
+                  'message' => 'Model was successfully saved.'
+                ]));
+            } else {
+                echo (json_encode([
+                  'status' => 'error',
+                  'message' => 'Error occured during model saving.'
+                ]));
+            }
             //header('Location: http://resources.local');
             exit;
         } else {
-            echo (json_encode(['status' => 'Model data are empty.']));
+            echo (json_encode([
+              'status' => 'error',
+              'message' => 'Model data are empty.'
+            ]));
             //header('Location: http://resources.local');
             exit;
         }

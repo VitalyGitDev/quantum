@@ -3,6 +3,7 @@ function localResource() {
     this.dirrectory = '';
     this.repository = '';
     this.local_domain = '';
+    this.category = '';
 }
 
 localResource.prototype.load = function(params) {

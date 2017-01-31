@@ -36,7 +36,9 @@ class ResourceModel extends Model
                 'url' => $this->local_domain,
             ];
         }
-        //die("<pre>" . print_r($sources, 1) . "</pre>");
-        file_put_contents($this->services->get('appConfig')->get('resources'), json_encode($sources));
+
+        $status = file_put_contents($this->services->get('appConfig')->get('resources'), json_encode($sources));
+
+				return $status;
     }
 }

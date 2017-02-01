@@ -41,4 +41,30 @@ class ResourceModel extends Model
 
 				return $status;
     }
+
+		public function remove(string $id)
+		{
+				$sources = file_get_contents($this->services->get('appConfig')->get('resources'));
+				//TODO: Need to throw an Exception if JSON is wrong.
+				$sources = json_decode($sources, true);
+				$status = false;
+
+				if (!empty($sources)) {
+						foreach($sources as $name => $source) {
+								foreach($source['container'] as $indx => $item) {
+										if (base64_encode($item['url']) == $id) {
+//TODO: URGENTLY CHECK THIS!!!
+												$status = "<pre>" . print_r($item['url'] . ' <-> ' . base64_decode($id), 1) . "</pre>";
+												//unset($sources[$name]['container'][$indx]);
+												break;
+										}
+								}
+
+						}
+						//$status = file_put_contents($this->services->get('appConfig')->get('resources'), json_encode($sources));
+
+				}
+
+				return $status;
+		}
 }

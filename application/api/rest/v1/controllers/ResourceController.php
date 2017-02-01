@@ -42,4 +42,30 @@ class ResourceController extends RESTController
         }
     }
 
+    public function actionDelete($id)
+    {
+        if (!empty($this->model)) {
+            $status = $this->model->remove($id);
+            if ($status === false) {
+                echo (json_encode([
+                  'status' => 'error',
+                  'message' => $status,
+                ]));
+            } else {
+                echo (json_encode([
+                  'status' => 'success',
+                  'message' => 'Model was successfully removed. ' . print_r($status, 1),
+                ]));
+            }
+        } else {
+            echo (json_encode([
+              'status' => 'error',
+              'message' => 'Model data are empty.'
+            ]));
+            //header('Location: http://resources.local');
+        }
+
+        exit;
+    }
+
 }

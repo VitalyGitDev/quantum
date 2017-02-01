@@ -6,9 +6,9 @@ $(document).ready(function(){
         fill(sources[source].container, $('#' + source + '-list'));
     }
     addItemRemoveListeners('element-remove', 'Do you really want to remove element?', function(){
-        location.reload();
+        //location.reload();
     });
-    
+
     WINDOW_FACTORY.createModal($('body'), RESOURCE_MODEL);
 });
 
@@ -33,7 +33,7 @@ function fill(list, container) {
             row_html += list[length].url + '\">' + '</iframe><div class=\"iframe-overlay\"></div></div>';
             row_html += '<div class=\"row\"><h5>' + list[length].name + '</h5></div>';
             row_html += '<div class=\"row\">' + '<a href=\"' + list[length].url + '\" target=\"_blank\" class=\"button\">Visit</a></div>';
-            row_html += '<div class=\"row list-item-menu\"><div class=\"list-menu-entry\"><i class="fi-refresh"></i></div><div class=\"list-menu-entry\"><i class="fi-widget"></i></div><div class=\"list-menu-entry\"><i class="fi-download"></i></div><div class=\"list-menu-entry align-right element-remove\" item_url=\"' + list[length].url + '\"><i class="fi-x"></i></div></div>';
+            row_html += '<div class=\"row list-item-menu\"><div class=\"list-menu-entry\"><i class="fi-refresh"></i></div><div class=\"list-menu-entry\"><i class="fi-widget"></i></div><div class=\"list-menu-entry\"><i class="fi-download"></i></div><div class=\"list-menu-entry align-right element-remove\" item_url=\"' + window.btoa(list[length].url) + '\"><i class="fi-x"></i></div></div>';
             row_html += '</div>';
         }
 
@@ -55,8 +55,9 @@ function addItemRemoveListeners(class_name, confirm_message, callback) {
             var button = remove_buttons[indx];
             button.addEventListener('click', function(){
                 if (confirm(confirm_message)) {
-                    var id = button.item_url;
-                    RESOURCE_MODEL.remove(id, callback());
+                    var id = button.getAttribute("item_url");
+                    console.log(button);
+                    //RESOURCE_MODEL.remove(id, callback);
                 };
             });
         }

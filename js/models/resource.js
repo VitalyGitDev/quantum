@@ -49,16 +49,19 @@ localResource.prototype.save = function(params, callback) {
 
 localResource.prototype.remove = function(identifier, callback) {
     if  ((typeof identifier != undefined) && (identifier != '')) {
-        var data = {id: identifier};
 
         $.ajax({
-            url: '/api/v1/resources/',
-            data: data,
+            url: '/api/v1/resources/' + identifier,
             method: 'DELETE',
             success: function(data){
-                console.log(data);
-                if ((typeof callback) == 'function') {
-                    callback();
+                var data = JSON.parse(data);
+
+                if (data.status == 'error') {
+                    alert(data.message);
+                } else {
+                    if ((typeof callback) == 'function') {
+                        callback();
+                    }
                 }
             },
             error: function(e, eText){

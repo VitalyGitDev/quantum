@@ -79,8 +79,8 @@ class Router
                   break;
               case "DELETE" :
                   $this->action = 'actionDelete';
-                  if (! empty($address[4]) && ($address[4] * 1)) {
-                      $this->action_param = (int)$address[4];
+                if (! empty($address[4])/* && ($address[4] * 1)*/) {
+                      $this->action_param = $address[4];
                   } else {
                       $this->ErrorPage404();
                   }

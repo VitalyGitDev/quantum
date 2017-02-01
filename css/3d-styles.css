@@ -2,7 +2,7 @@
 /* ===== 3D Styles =====*/
 .container-wrapper {
   width: 900px;
-  height: 650px;
+  height: 900px;
   /*border: 1px solid #000;*/
   position: relative;
   perspective: 900px;

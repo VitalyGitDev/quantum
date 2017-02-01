@@ -1,5 +1,5 @@
 //======= CURRENT WORKAROUND=======\\
-- Make resource delete logic;
+-(active) Make resource delete logic;
 - Make redraw logic after successfully action
 
 

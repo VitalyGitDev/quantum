@@ -46,3 +46,24 @@ localResource.prototype.save = function(params, callback) {
         });
     }
 }
+
+localResource.prototype.remove = function(identifier, callback) {
+    if  ((typeof identifier != undefined) && (identifier != '')) {
+        var data = {id: identifier};
+
+        $.ajax({
+            url: '/api/v1/resources/',
+            data: data,
+            method: 'DELETE',
+            success: function(data){
+                console.log(data);
+                if ((typeof callback) == 'function') {
+                    callback();
+                }
+            },
+            error: function(e, eText){
+                console.log(eText);
+            }
+        });
+    }
+}

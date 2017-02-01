@@ -1,5 +1,14 @@
 body {
-    background: url('/../images/DeepSpace.jpg') no-repeat 100% 100%;
+    background: rgba(32,61,227,1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(32,61,227,1) 0%, rgba(10,38,69,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(32,61,227,1)), color-stop(100%, rgba(10,38,69,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(32,61,227,1) 0%, rgba(10,38,69,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(32,61,227,1) 0%, rgba(10,38,69,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(32,61,227,1) 0%, rgba(10,38,69,1) 100%);
+    background: radial-gradient(ellipse at center, rgba(32,61,227,1) 0%, rgba(10,38,69,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#203de3', endColorstr='#0a2645', GradientType=1 );
+
+    /*background: rgba(0,0,100, 0.5); url('/../images/DeepSpace.jpg') no-repeat 100% 100%;*/
     overflow: hidden;
 }
 .list-item {
@@ -90,4 +99,10 @@ body {
 }
 .side-button:focus {
     color: rgba(0, 0, 255, 1.0);
+}
+.align-left {
+    float: left;
+}
+.align-right {
+    float: right;
 }

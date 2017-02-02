@@ -1,5 +1,5 @@
 //======= CURRENT WORKAROUND=======\\
--(active) Make resource delete logic;
+- Fix bug with no "+" button if category is empty;
 - Make redraw logic after successfully action
 
 

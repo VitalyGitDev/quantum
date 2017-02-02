@@ -53,16 +53,14 @@ class ResourceModel extends Model
 						foreach($sources as $name => $source) {
 								foreach($source['container'] as $indx => $item) {
 										if (base64_encode($item['url']) == $id) {
-//TODO: URGENTLY CHECK THIS!!!
-												$status = "<pre>" . print_r($item['url'] . ' <-> ' . base64_decode($id), 1) . "</pre>";
-												//unset($sources[$name]['container'][$indx]);
+												unset($sources[$name]['container'][$indx]);
 												break;
 										}
 								}
 
 						}
-						//$status = file_put_contents($this->services->get('appConfig')->get('resources'), json_encode($sources));
 
+						$status = file_put_contents($this->services->get('appConfig')->get('resources'), json_encode($sources));
 				}
 
 				return $status;

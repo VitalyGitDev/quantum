@@ -33,7 +33,7 @@ function fill(list, container) {
             row_html += list[length].url + '\">' + '</iframe><div class=\"iframe-overlay\"></div></div>';
             row_html += '<div class=\"row\"><h5>' + list[length].name + '</h5></div>';
             row_html += '<div class=\"row\">' + '<a href=\"' + list[length].url + '\" target=\"_blank\" class=\"button\">Visit</a></div>';
-            row_html += '<div class=\"row list-item-menu\"><div class=\"list-menu-entry\"><i class="fi-refresh"></i></div><div class=\"list-menu-entry\"><i class="fi-widget"></i></div><div class=\"list-menu-entry\"><i class="fi-download"></i></div><div class=\"list-menu-entry align-right element-remove\" item_url=\"' + window.btoa(list[length].url) + '\"><i class="fi-x"></i></div></div>';
+            row_html += '<div class=\"row list-item-menu\"><div class=\"list-menu-entry\"><i class="fi-refresh"></i></div><div class=\"list-menu-entry\"><i class="fi-widget"></i></div><div class=\"list-menu-entry\"><i class="fi-download"></i></div><div class=\"list-menu-entry align-right element-remove\" id=\"' + window.btoa(list[length].url) + '\"><i class="fi-x"></i></div></div>';
             row_html += '</div>';
         }
 
@@ -50,17 +50,12 @@ function fill(list, container) {
 function addItemRemoveListeners(class_name, confirm_message, callback) {
     var remove_buttons = document.getElementsByClassName(class_name);
 
-    for(var indx in remove_buttons){
-        if (remove_buttons[indx].nodeType == 1) {
-            var button = remove_buttons[indx];
-            button.addEventListener('click', function(){
-                if (confirm(confirm_message)) {
-                    var id = button.getAttribute("item_url");
-                    console.log(button);
-                    //RESOURCE_MODEL.remove(id, callback);
-                };
-            });
-        }
+    for(var i = 0; i < remove_buttons.length; i++) {
+        remove_buttons[i].addEventListener('click', function(){
+            if (confirm(confirm_message)) {
+                RESOURCE_MODEL.remove(this.id, callback);
+            };
+        });
     }
 }
 function addPlusBlock() {

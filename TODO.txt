@@ -1,6 +1,7 @@
 //======= CURRENT WORKAROUND=======\\
 - Fix bug with no "+" button if category is empty;
-- Make redraw logic after successfully action
+- (active)Make redraw logic after successfully action
+- !!!Make Service(<Data Storage> - factory service which provides specific data storage instance in Singleton mode.) for Data Storage in JSON-file!!!
 
 
 
@@ -11,6 +12,7 @@
 
 
 //======= NEED TO DO ========\\
+- MAKE CODE REVIEW ACCORDING TO PHP7.1
 - Make Routes configurable!!!!!!!!!
 - Make Security Control SERVICE !!!!!
 - Think about how to set Permission for resources.json file edit.

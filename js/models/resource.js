@@ -54,13 +54,15 @@ localResource.prototype.remove = function(identifier, callback) {
             url: '/api/v1/resources/' + identifier,
             method: 'DELETE',
             success: function(data){
+                console.log(data);
                 var data = JSON.parse(data);
 
                 if (data.status == 'error') {
                     alert(data.message);
                 } else {
+                    console.log(data);
                     if ((typeof callback) == 'function') {
-                        callback();
+                        callback(data);
                     }
                 }
             },

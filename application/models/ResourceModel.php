@@ -65,4 +65,42 @@ class ResourceModel extends Model
 
 				return $status;
 		}
+
+    public function all($params = null)
+    {
+				$sources = file_get_contents($this->services->get('appConfig')->get('resources'));
+				//TODO: Need to throw an Exception if JSON is wrong.
+				$sources = json_decode($sources, true);
+
+        if (!empty($params['category'])) {
+						return $sources[$params['category']];
+				}
+
+				return $sources;
+    }
+
+		//TODO: Its not correct Idea.
+		public function getCategoryName($itemId = null)
+		{
+				if (!empty($itemId)) {
+						$sources = file_get_contents($this->services->get('appConfig')->get('resources'));
+						//TODO: Need to throw an Exception if JSON is wrong.
+						$sources = json_decode($sources, true);
+						if (empty($sources)) {
+								//TODO: Trow an Exception.
+								return [];
+						}
+
+						foreach($sources as $categoryName => $category) {
+								foreach($category['container'] as $indx => $item) {
+										if (base64_encode($item['url']) == $itemId) {
+												return $categoryName;
+												break;
+										}
+								}
+						}
+				}
+
+				return $this->category;
+		}
 }

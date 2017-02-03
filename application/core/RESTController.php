@@ -14,6 +14,7 @@ abstract class RESTController
     public function __construct(ServiceLocator $services)
     {
         $this->services = $services;
+        //TODO: Make with exception if no Model Class.
         if (! empty($this->modelClass)) {
             $this->model = new $this->modelClass($services);
         }
